@@ -24,6 +24,19 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Cloth"
+    post:
+      tags:
+        - cloth
+      summary: 生地一覧
+      description: 所持している生地の追加
+      operationid: createCloths
+      responses:
+        "201":
+          description: 生地の一覧
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cloth"
 components:
   schemas:
     Cloth:
@@ -57,3 +70,4 @@ components:
           type: string
           format: date-time
           description: 更新日
+          nullable: true
