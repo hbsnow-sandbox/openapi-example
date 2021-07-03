@@ -1,0 +1,40 @@
+openapi: 3.0.3
+info:
+  title: 生地の在庫管理システム
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/v1
+    description: Localhost server
+  - url: http://api.excample.com/v1
+    description: Production server
+paths:
+  /cloths:
+    get:
+      tags:
+        - cloth
+      summary: 生地一覧
+      description: 所持している生地の一覧
+      operationid: getCloths
+      responses:
+        "200":
+          description: 生地の一覧
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    clothId:
+                      type: string
+                      description: 生地ID
+                      example: cloth0001
+                    photo:
+                      type: string
+                      format: uri
+                      description: 生地の写真の URL
+                      example: https://example.com/cloth0001.jpg
+                    price:
+                      type: integer
+                      description: 10cm単位の価格
+                      example: 300
