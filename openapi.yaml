@@ -23,18 +23,28 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    clothId:
-                      type: string
-                      description: 生地ID
-                      example: cloth0001
-                    photo:
-                      type: string
-                      format: uri
-                      description: 生地の写真の URL
-                      example: https://example.com/cloth0001.jpg
-                    price:
-                      type: integer
-                      description: 10cm単位の価格
-                      example: 300
+                  $ref: "#/components/schemas/Cloth"
+components:
+  schemas:
+    Cloth:
+      type: object
+      properties:
+        clothId:
+          type: string
+          description: 生地ID
+          example: cloth0001
+        photo:
+          type: string
+          format: uri
+          description: 生地の写真の URL
+          example: https://example.com/cloth0001.jpg
+        price:
+          type: integer
+          description: 10cm単位の価格
+          example: 300
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
