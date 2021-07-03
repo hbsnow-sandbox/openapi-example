@@ -28,6 +28,13 @@ components:
   schemas:
     Cloth:
       type: object
+      description: 生地データ
+      required:
+        - clothId
+        - photo
+        - price
+        - createdAt
+        - updatedAt
       properties:
         clothId:
           type: string
@@ -45,6 +52,8 @@ components:
         createdAt:
           type: string
           format: date-time
+          description: 作成日
         updatedAt:
           type: string
           format: date-time
+          description: 更新日
