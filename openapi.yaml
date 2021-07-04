@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: 生地の在庫管理システム
-  version: 1.0.0
+  version: 0.1.0
 servers:
   - url: http://localhost:8080/v1
     description: Localhost server
@@ -29,7 +29,7 @@ paths:
         - cloth
       summary: 生地追加
       description: 所持している生地の登録
-      operationid: createCloths
+      operationid: createCloth
       responses:
         "201":
           description: 生地の一覧
@@ -43,6 +43,7 @@ paths:
         - cloth
       summary: 生地変更
       description: 登録している生地の変更
+      operationid: updateCloth
       parameters:
         - $ref: "#/components/parameters/clothIdParam"
       responses:
